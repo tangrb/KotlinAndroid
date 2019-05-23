@@ -15,7 +15,8 @@ import kotlinx.android.synthetic.main.activity_main.*
  * @date 2019-5-22
  *
  * 知识点：
- * 1.Kotlin的语句是一行一条语句，语句结尾没有“;”结尾。
+ * 1.Kotlin的语句的尾部可以跟分号“;”，如果跟分号，那么可以在一行书写多条语句；
+ * 如果不跟分号，那么一行只能书写一条语句。
  * 2.Kotlin的注释的用法。
  * 3.在Kotlin代码中可以直接调用Java代码。
  * 4.xml布局文件中的View的onClick属性，可以映射为Activity中的函数。
@@ -57,9 +58,13 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        Log.d(TAG, "onNewIntent: ")
+    }
+
     override fun onBackPressed() {
-        super.onBackPressed()
-        System.exit(0)
+        super.onBackPressed(); System.exit(0)
     }
 
     //xml布局文件中的View的onClick属性，可以映射为Activity中的函数

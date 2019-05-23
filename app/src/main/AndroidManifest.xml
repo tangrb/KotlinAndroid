@@ -12,14 +12,21 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
+            android:name=".android.Android0002Activity"
+            android:label="基础视图组件"
+            android:launchMode="singleTask" />
+        <activity
             android:name=".android.Android0001Activity"
-            android:label="Kotlin在Android应用开发中的应用" />
+            android:label="Kotlin在Android应用开发中的应用"
+            android:launchMode="singleTask" />
         <activity
             android:name=".kotlin.Kotlin0001Activity"
-            android:label="Kotlin语言基础" />
+            android:label="Kotlin语言基础"
+            android:launchMode="singleTask" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
