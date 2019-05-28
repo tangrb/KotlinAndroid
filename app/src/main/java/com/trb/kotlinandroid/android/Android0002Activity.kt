@@ -2,6 +2,8 @@ package com.trb.kotlinandroid.android
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import com.trb.kotlinandroid.R
 import kotlinx.android.synthetic.main.activity_android0002.*
@@ -14,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_android0002.*
  * 1.Button的点击事件和长按点击事件，以及函数的返回值的问题。
  * 2.CheckBox的onCheckedChange事件，以及lambda表达式中函数的参数的使用示例
  * 3.RadioGroup&RadioButton的onCheckedChange事件，以及字符模板的使用示例
+ * 4.EditText.addTextChangedListener()的使用示例
  */
 class Android0002Activity : AppCompatActivity() {
     val TAG = Android0002Activity::class.simpleName
@@ -24,6 +27,7 @@ class Android0002Activity : AppCompatActivity() {
         buttonClickEventDemo()
         checkBoxCheckEventDemo()
         radioGroupAndRadioButtonDemo()
+        editTextTextWatcherDemo();
     }
 
     //Button的点击事件和长按点击事件，以及函数的返回值的问题
@@ -61,5 +65,23 @@ class Android0002Activity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    //EditText.addTextChangedListener()的使用示例
+    private fun editTextTextWatcherDemo() {
+        //匿名对象
+        input_EditText_Android0002Activity.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                Log.d(TAG, "editTextTextWatcherDemo: afterTextChanged")
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                Log.d(TAG, "editTextTextWatcherDemo: beforeTextChanged")
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                Log.d(TAG, "editTextTextWatcherDemo: onTextChanged")
+            }
+        })
     }
 }

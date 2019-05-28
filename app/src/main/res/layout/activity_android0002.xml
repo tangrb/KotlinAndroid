@@ -59,5 +59,12 @@
                 android:text="Radio1"
                 android:textAllCaps="false" />
         </RadioGroup>
+
+        <EditText
+            android:id="@+id/input_EditText_Android0002Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            tools:ignore="Autofill,LabelFor" />
     </LinearLayout>
 </ScrollView>

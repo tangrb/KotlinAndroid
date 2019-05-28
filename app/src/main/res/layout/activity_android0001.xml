@@ -18,6 +18,8 @@
             android:onClick="handleButtonClickedInAndroid0001Activity"
             android:text="基础视图组件"
             android:textAllCaps="false" />
+
+
     </LinearLayout>
 
 </ScrollView>
